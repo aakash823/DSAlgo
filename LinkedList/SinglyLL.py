@@ -44,16 +44,16 @@ class LinkedList:
     def returnhead(self):
         return self.head
     
-
+    
 # singly = LinkedList()
 # singly.insert(1)
 # singly.insert(2)
 # singly.insert(3)
 # singly.insert(4)
 # singly.insert(5)
-# singly.insert(6)
-# singly.insert(7)
-# singly.printlist()       
+# singly.insert(8)
+# singly.insert(9)
 # print() 
-# print(ll.printlist())
-# print(singly.middle())
+# print(singly.printlist())
+# singly.insertinsorted(7)
+# print(singly.printlist())
