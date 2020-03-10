@@ -13,13 +13,13 @@ def findmid(head):
 def reverse(head):
     prev = None
     curr = head
+    nextcurr = None
     while curr is not None:
         nextcurr = curr.next
         curr.next = prev
         prev = curr
         curr = nextcurr
-    return prev
-
+    head = prev
 
 def insertinsorted(head,data):
         current = head
@@ -44,5 +44,4 @@ insertinsorted(ll.returnhead(),7)
 print(ll.printlist())
 
 
-# ll = reverse(ll)
     
