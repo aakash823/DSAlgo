@@ -7,6 +7,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+
     def insert(self,data):
         if self.head is None:
             self.head = Node(data)
@@ -16,6 +17,7 @@ class LinkedList:
         while current.next is not None:
             current = current.next
         current.next = newnode
+
 
     def printlist(self):
         current = self.head
@@ -41,19 +43,29 @@ class LinkedList:
             fast = fast.next.next
         return slow.data
 
+
+    def deletenode(self,value):
+        current = self.head
+        while current.data != value:
+            prev = current
+            current = current.next
+        prev.next = current.next
+
+
     def returnhead(self):
         return self.head
     
     
+    
+        
+
 # singly = LinkedList()
-# singly.insert(1)
-# singly.insert(2)
-# singly.insert(3)
-# singly.insert(4)
 # singly.insert(5)
+# singly.insert(4)
+# singly.insert(3)
+# singly.insert(2)
+# singly.insert(2)
 # singly.insert(8)
 # singly.insert(9)
-# print() 
 # print(singly.printlist())
-# singly.insertinsorted(7)
 # print(singly.printlist())

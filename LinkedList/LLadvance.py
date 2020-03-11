@@ -30,17 +30,28 @@ def insertinsorted(head,data):
         prev.next = newnode
         newnode.next = current
 
+def sortlinkedlist(head):
+        current = head
+        nextnode = head.next
+        while current is not None:
+            nextnode = head
+            while nextnode.next is not None:
+                if nextnode.data > nextnode.next.data:
+                    nextnode.data , nextnode.next.data = nextnode.next.data, nextnode.data
+                nextnode = nextnode.next
+            current = current.next
 
 
 ll = SinglyLL.LinkedList()
-ll.insert(1)
-ll.insert(2)
-ll.insert(3)
 ll.insert(4)
-ll.insert(9)
-ll.insert(11)
+ll.insert(5)
+ll.insert(2)
+ll.insert(2)
+ll.insert(7)
+ll.insert(6)
 print(ll.printlist())
-insertinsorted(ll.returnhead(),7)
+sortlinkedlist(ll.returnhead())
+insertinsorted(ll.returnhead(),3)
 print(ll.printlist())
 
 
