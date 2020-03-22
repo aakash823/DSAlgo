@@ -43,15 +43,26 @@ class BinaryTree:
         if lefttree is None and righttree is None:
             return None
         return lefttree if lefttree is not None else righttree
+
+
+
+    def branchsums(self,root,currentsum,array):
+        if root is None:
+            return 
+        newsums = currentsum + root.data
+        if root.left is None and root.right is None:
+            array.append(newsums)
+        self.branchsums(root.left,newsums,array)
+        self.branchsums(root.right,newsums,array)
     #           1
     #         /   \
     #        2     3
     #       / \   /  \
     #      4   5 6    7
-    #     /     \      \
-    #    9      20      25
-    #   /
-    #  11
+    #     /\    \      \
+    #    9  11   20      25
+    #   
+    #  
 BT = BinaryTree(1)
 BT.root.left = Node(2)
 BT.root.right = Node(3)
@@ -71,3 +82,7 @@ print(inordertravesal)
 levelordertraversal = BT.levelorder(BT.root,[])
 print(levelordertraversal)
 print(BT.lowestcommonnode(BT.root,6,25))
+
+array = []
+BT.branchsums(BT.root,0,array)
+print(array)
