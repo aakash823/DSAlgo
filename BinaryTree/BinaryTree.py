@@ -43,11 +43,15 @@ class BinaryTree:
         if lefttree is None and righttree is None:
             return None
         return lefttree if lefttree is not None else righttree
-        #1
-    #   / \
-    #  2   3
-    # / \ /  \
-    #4  5 6   7
+    #           1
+    #         /   \
+    #        2     3
+    #       / \   /  \
+    #      4   5 6    7
+    #     /     \      \
+    #    9      20      25
+    #   /
+    #  11
 BT = BinaryTree(1)
 BT.root.left = Node(2)
 BT.root.right = Node(3)
@@ -58,6 +62,7 @@ BT.root.right.right = Node(7)
 BT.root.left.left.left = Node(9)
 BT.root.left.left.right = Node(11)
 BT.root.left.right.right = Node(20)
+BT.root.right.right.right = Node(25)
 
 
 
@@ -65,4 +70,4 @@ inordertravesal = BT.printdata(BT.root,[])
 print(inordertravesal)
 levelordertraversal = BT.levelorder(BT.root,[])
 print(levelordertraversal)
-print(BT.lowestcommonnode(BT.root,11,20))
+print(BT.lowestcommonnode(BT.root,6,25))
