@@ -34,15 +34,47 @@ class BinaryTree:
         if root is None:
             return
         if root.data == val1 or root.data == val2:
-            return root.data
+            return root
         lefttree = self.lowestcommonnode(root.left,val1,val2)
         righttree = self.lowestcommonnode(root.right,val1,val2)
 
         if lefttree and righttree:
-            return root.data
+            return root
         if lefttree is None and righttree is None:
             return None
         return lefttree if lefttree is not None else righttree
+
+    def distancebw2nodes(self,root,val1,val2):
+        commonnode = self.lowestcommonnode(root,val1,val2)
+        queue = []
+        d1,level = 0,0
+        queue.append(commonnode)
+        while len(queue):
+            current = queue.pop(0)
+            if current.data == val1:
+                d1 +=level
+                break
+            level+=1
+            
+            if current.left is not None:
+                queue.append(current.left)
+            if current.right is not None:
+                queue.append(current.right)
+        d2,level = 0 , 0
+        queue.append(commonnode)
+        while len(queue):
+            current = queue.pop(0)
+            if current.data == val2:
+                d2 +=level
+                break
+            level+=1
+            
+            if current.left is not None:
+                queue.append(current.left)
+            if current.right is not None:
+                queue.append(current.right)
+        return d1+d2
+
 
 
 
@@ -81,8 +113,10 @@ inordertravesal = BT.printdata(BT.root,[])
 print(inordertravesal)
 levelordertraversal = BT.levelorder(BT.root,[])
 print(levelordertraversal)
-print(BT.lowestcommonnode(BT.root,6,25))
+print(BT.lowestcommonnode(BT.root,6,25).data)
 
 array = []
 BT.branchsums(BT.root,0,array)
 print(array)
+
+print(BT.distancebw2nodes(BT.root,1,25))
