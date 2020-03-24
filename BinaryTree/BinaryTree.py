@@ -75,7 +75,12 @@ class BinaryTree:
                 queue.append(current.right)
         return d1+d2
 
-
+    def inverttree(self,root):
+        if root is None:
+            return
+        root.left, root.right = root.right, root.left
+        self.inverttree(root.left)
+        self.inverttree(root.right)
 
 
     def branchsums(self,root,currentsum,array):
@@ -119,4 +124,5 @@ array = []
 BT.branchsums(BT.root,0,array)
 print(array)
 
-print(BT.distancebw2nodes(BT.root,1,25))
+BT.inverttree(BT.root)
+print(BT.levelorder(BT.root,[]))
