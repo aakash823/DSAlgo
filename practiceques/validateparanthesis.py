@@ -1,11 +1,11 @@
 def balancedBrackets(string):
-    
+
 	closing = '}])'
 	opening = '[{('
 	matching = {
 		')': '(',
 		'}': '{',
-		']':'['
+		']': '['
 	}
 	stack = []
 	
