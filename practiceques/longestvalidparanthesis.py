@@ -9,6 +9,8 @@ def longestvalidparenthesis(string):
             stack.pop()
             if len(stack):
                 result = max(result,i-stack[-1])
+            else:
+                stack.append(i)
     return result
 
-print(longestvalidparenthesis(")"))
+print(longestvalidparenthesis(")()"))
