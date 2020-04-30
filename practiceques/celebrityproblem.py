@@ -28,5 +28,8 @@ def returncelebrity(matrix, x, y):
     return stack[-1]
 
 
-matrix = [[0,0,1,0],[0,0,1,0],[0,0,0,0],[0,0,1,0]]
+matrix = [[0,0,1,0],
+          [0,0,1,0],
+          [0,0,0,0],
+          [0,0,1,0]]
 print(returncelebrity(matrix,0,len(matrix[0])-1))
