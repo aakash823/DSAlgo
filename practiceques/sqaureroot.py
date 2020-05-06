@@ -23,5 +23,4 @@ def squareroot(n,p):
         inc = inc/10
     return ans
 
-
 print(squareroot(10,3))
