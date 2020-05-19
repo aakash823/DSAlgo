@@ -16,7 +16,6 @@ def squareroot(n,p):
     inc = 0.1
 
     for i in range(p):
-        #ans = ans + inc
         while (ans*ans <= n):
             ans +=inc
         ans -= inc
