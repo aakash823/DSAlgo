@@ -1,4 +1,5 @@
 def squareroot(n,p):
+    
     left = 1
     right = n
     ans = 0
