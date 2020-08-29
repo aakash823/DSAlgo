@@ -8,6 +8,7 @@ class BinaryTree:
     def __init__(self,data):
         self.root = Node(data)
 
+
     def printdata(self,root,array):
         if root is not None:
             self.printdata(root.left,array)
@@ -98,8 +99,8 @@ class BinaryTree:
     #      4   5 6    7
     #     /\    \      \
     #    9  11   20      25
-    #   
-    #  
+    #   /
+    #  17
 BT = BinaryTree(1)
 BT.root.left = Node(2)
 BT.root.right = Node(3)
